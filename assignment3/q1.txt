@@ -1,0 +1,12 @@
+In this project, we built a sentiment analysis system using Hugging Face’s tools and the IMDb movie review dataset.
+The main goal was to classify reviews as either positive or negative using a pre-trained BERT model.
+The process started by loading the IMDb dataset using the datasets library. Since BERT models need text in a specific 
+format, we used the BertTokenizer to preprocess and tokenize the text data, trimming longer inputs to fit the model’s limits.
+Next, we loaded the bert-base-uncased model for sequence classification and fine-tuned it on a smaller subset of the training
+data—just 2,000 examples and 1 epoch—to keep training fast and resource-friendly. We used Hugging Face’s Trainer class, which
+simplifies the training process and automatically handles things like evaluation, batching, and logging.To measure how well
+the model was performing, we tracked accuracy and F1 score, which give a good sense of its effectiveness.After training, we 
+saved the model and tokenizer so they could be reused later. We also tested it on a sample review, and it correctly predicted
+the sentiment.
+Overall, this pipeline is a great starting point for real-world text classification tasks and can easily be expanded with more 
+data or fine-tuning.
